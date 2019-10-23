@@ -1,0 +1,20 @@
+#scheme.graphql는 사용자가 뭘 할지에 대해서 정의
+#query - database로 부터 정보를 얻는다 
+#mutation - 서버 또는 databse에서 메모리에서 정보를 바꾸는 작업을 할때 
+#mutation - database 상태가 변할때 사용, change of state
+
+type Movie {
+  id: Int!
+  name: String!
+  score: Int!
+}
+
+type Query {
+  movies: [Movie]!
+  movie(id: Int!): Movie
+}
+
+type Mutation {
+  addMovie(name: String!, score: Int!): Movie!
+  deleteMovie(id:Int!): Boolean!
+}
